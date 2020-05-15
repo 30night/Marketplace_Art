@@ -1,4 +1,7 @@
 class ListingsController < ApplicationController
+  # before_action :authenticate_user!x
+  
+  
   def index
     @listings = Listing.all 
   end 
@@ -12,9 +15,25 @@ class ListingsController < ApplicationController
   end
 
   def create
-    Listing.create(listings_params)
+    @listing = Listing.new(listings_params) 
+    @listing.save
+    # redirect_to root_path
+    # @listing = Listing.create
 
-    redirect_to root_path
+    redirect_to @listing
+  end
+
+   def edit
+    @listing = Listing.find(params[:id])
+   end
+
+  def update
+    @listing = Listing.find(params[:id])
+    if @listing.update(listings_params)
+    redirect_to @listing
+    else
+    render 'edit'
+    end
   end
 
   private
@@ -23,8 +42,6 @@ class ListingsController < ApplicationController
     params.require(:listing).permit(:name, :description, :price)
     #add images later
   end
-
-
 
 
 

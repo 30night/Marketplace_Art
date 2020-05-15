@@ -1,3 +1,8 @@
 <h1>names</h1>
 
 <%= @listing.name %>
+<%= @listing.description %>
+
+  <div class="bottom-links" >
+  <%= button_to " Edit ", edit_listing_path, method: :get %>
+  </div>
