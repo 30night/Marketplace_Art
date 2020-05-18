@@ -1,5 +1,11 @@
 <nav>
   <%= link_to "create listing", new_listing_path %>
   <%= link_to "home", root_path %>
+  <%= link_to "log out", destroy_user_session_path, method: :delete %>
+  <%= link_to "sign up", new_user_registration_path %>
+  <%= link_to "log in", new_user_session_path %>
 
+  <%# <% if user_signed_in?  %> 
+  <%# <% else  %> 
+  <%# <%  %> 
 </nav>

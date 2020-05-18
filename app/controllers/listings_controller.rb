@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
-  # before_action :authenticate_user!x
-  
+  before_action :authenticate_user!, except: [:index]
+  before_action :authorize!, only: [:edit, :update, :destroy]
   
   def index
     @listings = Listing.all 
@@ -16,6 +16,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listings_params) 
+    @listing.user = current_user
     @listing.save
     # redirect_to root_path
     # @listing = Listing.create
@@ -43,7 +44,13 @@ class ListingsController < ApplicationController
     #add images later
   end
 
+  def authorize!
+    @listing = current_user.listings.find_by_id(params[:id])
+    if @listing.nil? 
+    redirect_to listings_path
+    end
 
+  end
 
 
 end
