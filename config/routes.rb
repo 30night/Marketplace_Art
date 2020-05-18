@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   
 
 
-  root to: 'listings#index'
+  root to: 'welcome#index'
 end

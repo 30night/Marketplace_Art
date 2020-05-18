@@ -1,10 +1,18 @@
+
+
+<div class="main">
+
 <h1>Welcome</h1>
-<% @listings.each do |listing| %>
-<%= link_to listing_path(listing) do %>
- <div> 
-  <h3>Name</h3>
-  <%= listing.name %>
- </div>
- <hr>
- <% end %>
-<% end %> 
+
+  <% @listings.each do |listing| %>
+    <%= link_to listing_path(listing) do %>
+    <div> 
+      <h3>Name</h3>
+      <h1>helo</h1>
+      <%= listing.name %>
+    </div>
+    <hr>
+    <% end %>
+  <% end %> 
+</div>
+
