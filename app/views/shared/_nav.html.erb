@@ -3,24 +3,49 @@
 
 <nav class="navbar">
   <ul class="navbar-nav">
+    <li class="logo">
+      <span class="logo-pic"><%= image_tag "icons/test.svg", size: '40x40' %></span>
+      <span class="link-text logo-text">Starshopping</span>
+    </li>  
+
+
     <li class="nav-item">
-      <%= link_to "create listing", new_listing_path %>
+     <%= link_to root_path do  %>
+      <span class="nav-link"><%= image_tag "icons/home-solid.svg", size: '80x80' %> <span class="words"> Home</span></span>
+     <% end %>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to new_listing_path do  %>
+     <span class='nav-link'> <%= image_tag "icons/plus-solid.svg", size: '80x80' %> <span class="words"> New item</span></span>
+     <% end  %>
     </li> 
+
+
+
+
+
+
     <li class="nav-item">
-      <%= link_to "home", root_path %>
+      <%= link_to new_user_session_path do %>
+      <span class='nav-link'><%= image_tag "icons/sign-in-alt-solid.svg", size: "80x80" %> <span class="words"> Log in</span></span>
+      <% end %>
     </li>
+
+  <% if user_signed_in?  %>
     <li class="nav-item">
-      <%= link_to "log out", destroy_user_session_path, method: :delete %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+      <span class='nav-link'><%= image_tag "icons/sign-out-alt-solid.svg", size: '80x80' %> <span class="words"> Log out</span></span>
+      <% end %>
     </li>
+  <%end%>
+ 
     <li class="nav-item">
-      <%= link_to "sign up", new_user_registration_path %>
+      <%= link_to new_user_registration_path do %>
+      <span class='nav-link'><%= image_tag "icons/user-plus-solid.svg", size: '80x80' %> <span class="words"> Sign up</span></span>
+      <% end %>
     </li>
-    <li class="nav-item">
-      <%= link_to "log in", new_user_session_path %>
-    </li>
-  <%# <% if user_signed_in?  %> 
-  <%# <% else  %> 
-  <%# <%  %> 
+   
 
 
   </ul>

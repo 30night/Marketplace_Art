@@ -1,10 +1,13 @@
 <h1>Welcome</h1>
 <% @listings.each do |listing| %>
 <%= link_to listing_path(listing) do %>
- <div> 
+ <div class="menu-card"> 
+ <div>
+  <%= image_tag @listing.picture if @listing.picture.attached? %>
+  </div>
   <h3>Name</h3>
-  <%= listing.name %>
- </div>
+  <%= @listing.name %>
  <hr>
  <% end %>
 <% end %> 
+ </div>

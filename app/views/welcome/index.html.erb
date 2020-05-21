@@ -8,8 +8,9 @@
     <%= link_to listing_path(listing) do %>
     <div> 
       <h3>Name</h3>
-      <h1>helo</h1>
       <%= listing.name %>
+        <%= image_tag listing.picture if listing.picture.attached? %>
+
     </div>
     <hr>
     <% end %>

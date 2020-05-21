@@ -5,15 +5,45 @@
 
 :root{
   font-size: 16px;
- 
+   --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #5a5a5f;
+  --bg-secondary: #632bca;
+  --transition-speed: 600ms;
 }
 
-
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
 
 .main{
-  // margin-left: 4rem;
-  width: 75%;
-  // padding: 1rem;
-  display: inline-block;
+  margin-left: 5rem;
+  // width: 75%;
+  padding: 1rem;
+  // display: inline-block;
 }
 
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+form{
+    margin-left: 5rem;
+  // width: 75%;
+  padding: 1rem;
+}
+
+// a {
+//   padding-top: 3rem;
+// }

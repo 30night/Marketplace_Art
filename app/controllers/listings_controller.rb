@@ -37,10 +37,15 @@ class ListingsController < ApplicationController
     end
   end
 
+    def destroy
+    @listing.destroy
+    redirect_to root_path
+  end
+
   private
 
   def listings_params
-    params.require(:listing).permit(:name, :description, :price)
+    params.require(:listing).permit(:name, :description, :price, :picture)
     #add images later
   end
 
