@@ -1,19 +1,32 @@
 
 
-<div class="main">
+<%# <div class="main"> %>
 
-<h1>Welcome</h1>
+<%# <h1>Welcome</h1> %>
 
-  <% @listings.each do |listing| %>
-    <%= link_to listing_path(listing) do %>
-    <div> 
-      <h3>Name</h3>
-      <%= listing.name %>
-        <%= image_tag listing.picture if listing.picture.attached? %>
+  <%# <% @listings.each do |listing| %> 
 
-    </div>
-    <hr>
-    <% end %>
-  <% end %> 
+    <%# <%= link_to listing_path(listing) do %> 
+        <%# <div class="show-container" >  %>
+        <%# <%= image_tag listing.picture if listing.picture.attached? %> 
+        <%# </div> %>
+    
+  
+    <%# <% end %> %>
+  <%# <% end %>  %>
+  <%# </div> %>
+
+
+
+<div class="containermenu">
+<% @listings.each do |listing| %>
+  <%= link_to listing_path(listing) do  %>
+<div class="card" style="width: 18rem;">
+  <%= image_tag listing.picture if listing.picture.attached? %>
+  <div class="card-body">
+   
+  </div>
 </div>
-
+  <% end %>
+<% end %>
+</div>

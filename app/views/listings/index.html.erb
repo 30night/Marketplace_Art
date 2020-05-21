@@ -1,7 +1,7 @@
-<h1>Welcome</h1>
+<div class='main-headding'><h1>Starshopping</h1></div>
+ <div class="menu-container"> 
 <% @listings.each do |listing| %>
 <%= link_to listing_path(listing) do %>
- <div class="menu-card"> 
  <div>
   <%= image_tag @listing.picture if @listing.picture.attached? %>
   </div>

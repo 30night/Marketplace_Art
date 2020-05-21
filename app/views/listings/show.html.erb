@@ -5,13 +5,11 @@
 <%= @listing.name %>
 <%= image_tag @listing.picture if @listing.picture.attached? %>
 <%= @listing.description %>
-
+<h1>price</h1>
+<%= @listing.price %>
   <div class="bottom-links" >
   <%= button_to " Edit ", edit_listing_path, method: :get %>
-  </div>
 
-
-  <div class="bottom-links" >
   <%= button_to " Delete ", listing_path(@listing.id), method: "delete" %>
   </div>
   </div>
